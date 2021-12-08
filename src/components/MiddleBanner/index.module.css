@@ -7,7 +7,6 @@
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -16,9 +15,28 @@
 }
 
 .wrapper .item > h2 {
-  font-size: 32px;
+  font-size: 38px;
   font-family: "Poppins", "Arial", sans-serif;
   font-weight: 600;
-  max-width: 220px;
+  max-width: 260px;
   margin: 40px 0px;
+}
+
+.wrapper .item:first-child {
+  padding-left: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper .item {
+    width: 100%;
+  }
+
+  .wrapper .item:first-child {
+    padding: 10px;
+  }
+
 }

@@ -1,11 +1,15 @@
 import Provider from '../Provider';
 import { Button } from '@chakra-ui/react';
 
+import { useModal } from '../../context/ModalRegister';
+
 import styles from './index.module.css';
 
 import ecossistemaGalaxy from '../../assets/ecossistema-galaxy.png';
 
 export default function MiddleBanner() {
+  const { setIsOpen } = useModal();
+
   return (
     <div className={styles.middleBanner}>
       <Provider>
@@ -18,6 +22,7 @@ export default function MiddleBanner() {
               p="12px 20px"
               fontWeight="400"
               color="#fff"
+              onClick={() => setIsOpen(true)}
               _focus={{
                 outline: "none !important"
               }}

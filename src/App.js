@@ -8,6 +8,7 @@ import ProductModal3 from './context/ProductModal3';
 import ProductModal4 from './context/ProductModal4';
 import IntegracaoWindowsContext from './context/IntegracaoWindows';
 import CustomizacaoSeguranca from './context/CustomizacaoSeguranca';
+import DrawerProvider from './context/Drawer';
 
 import './globals.css';
 
@@ -20,9 +21,11 @@ const App = () => (
             <ProductModal4>
               <IntegracaoWindowsContext>
                 <CustomizacaoSeguranca>
+                  <DrawerProvider>
 
-                  <Home />
+                    <Home />
 
+                  </DrawerProvider>
                 </CustomizacaoSeguranca>
               </IntegracaoWindowsContext>
             </ProductModal4>

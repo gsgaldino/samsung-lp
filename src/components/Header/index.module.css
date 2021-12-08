@@ -22,13 +22,22 @@
   text-decoration: underline;
 }
 
+.hamburger {
+  display: none;
+}
+
 @media screen and (max-width: 767px){
   .wrapper {
+    padding: 0px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .wrapper .item:last-child {
     display: none;
+  }
+
+  .hamburger {
+    display: block;
   }
 }

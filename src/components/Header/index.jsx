@@ -2,11 +2,16 @@ import Provider from '../Provider';
 import Logo from '../Logo';
 import { Button } from '@chakra-ui/react';
 import { useModal } from '../../context/ModalRegister';
+import { useDrawer } from '../../context/Drawer';
+
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 import styles from './index.module.css';
 
 export default function Header() {
   const { setIsOpen } = useModal();
+  const { setIsDrawerOpen } = useDrawer();
+
   const menuItems = [
     {
       label: "Produtos",
@@ -33,6 +38,15 @@ export default function Header() {
           <div className={styles.item}>
             <Logo />
           </div>
+
+          <div className={styles.hamburger}>
+           <HamburgerIcon 
+              onClick={() => setIsDrawerOpen(true)}
+              w="50px"
+              h="50px"
+           />
+          </div>
+
           <div className={styles.item}>
             <nav>
               <ul>
