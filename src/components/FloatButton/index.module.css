@@ -1,0 +1,39 @@
+.floatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.floatButton .button {
+  width: 90px;
+  height: 90px;
+}
+
+.floatButton .button img {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.floatButton .button img:hover {
+  filter: brightness(85%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wrapper button {
+  margin: 10px 0px;
+}
+
+.wrapper .box {
+  width: 100%;
+}
+
+.wrapper .box p {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-size: 13px;
+  margin: 2px 0px;
+}

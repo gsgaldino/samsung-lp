@@ -6,6 +6,7 @@ import Collection from '../components/Collection';
 import MiddleBanner from '../components/MiddleBanner';
 import Integrations from '../components/Integrations';
 import Footer from '../components/Footer';
+import FloatButton from '../components/FloatButton';
 
 import RegisterModal from '../components/modals/RegisterModal';
 import ProductModal1 from '../components/modals/ProductModal1';
@@ -26,6 +27,7 @@ export default function Home() {
       <MiddleBanner />
       <Integrations />
       <Footer />
+      <FloatButton />
 
       <RegisterModal />
       <ProductModal1 />
