@@ -3,13 +3,13 @@ import React from 'react';
 const ModalRegisterContext = React.createContext();
 
 export default function ProductModal3({ children }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen3] = React.useState(false);
 
   return (
     <ModalRegisterContext.Provider
       value={{
         isOpen,
-        setIsOpen
+        setIsOpen3
       }}
     >
       { children }
@@ -17,9 +17,9 @@ export default function ProductModal3({ children }) {
   );
 };
 
-export function useModal() {
+export function useModal3() {
   const context = React.useContext(ModalRegisterContext);
-  const { isOpen, setIsOpen } = context;
+  const { isOpen, setIsOpen3 } = context;
 
-  return {isOpen, setIsOpen };
+  return {isOpen, setIsOpen3 };
 };

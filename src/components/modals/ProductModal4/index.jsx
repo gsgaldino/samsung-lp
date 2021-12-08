@@ -5,18 +5,15 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  FormControl,
-  FormLabel,
   Button,
-  Input
 } from "@chakra-ui/react";
 
-import { useModal } from '../../../context/ProductModal4';
+import { useModal4 } from '../../../context/ProductModal4';
 
 export default function ProductModal4() {
-  const { isOpen, setIsOpen } = useModal();
+  const { isOpen, setIsOpen4 } = useModal4();
 
-  const onClose = () => setIsOpen(false);
+  const onClose = () => setIsOpen4(false);
 
   return (
     <Modal
@@ -28,23 +25,9 @@ export default function ProductModal4() {
         <ModalHeader
           textAlign="center"
           color="#000"
-        >Product modal 4</ModalHeader>
+        >Galaxy S21 | S21+ | S21 Ultra</ModalHeader>
+        
         <ModalBody pb={6}>
-          <FormControl>
-            <FormLabel>Nome</FormLabel>
-            <Input 
-              border="2px solid #BDBDBD !important"
-            />
-          </FormControl>
-
-          <FormControl mt={4}>
-            <FormLabel>Celular</FormLabel>
-            <Input border="2px solid #BDBDBD !important"/>
-          </FormControl>
-          <FormControl mt={4}>
-            <FormLabel>E-mail</FormLabel>
-            <Input border="2px solid #BDBDBD !important"/>
-          </FormControl>
         </ModalBody>
 
         <ModalFooter>

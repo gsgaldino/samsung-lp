@@ -11,12 +11,14 @@ import separator from '../../assets/separator.svg';
 
 import { useModal as useModal1 } from '../../context/ProductModal1';
 import { useModal as useModal2 } from '../../context/ProductModal2';
-// import { useModal as useModal3 } from '../../context/ProductModal3';
-// import { useModal as useModal4 } from '../../context/ProductModal4';
+import { useModal3 } from '../../context/ProductModal3';
+import { useModal4 } from '../../context/ProductModal4';
 
 export default function Collection() {
   const { setIsOpen1 } = useModal1();
   const { setIsOpen2 } = useModal2();
+  const { setIsOpen3 } = useModal3();
+  const { setIsOpen4 } = useModal4();
 
   return (
     <div className={styles.collection}>
@@ -26,8 +28,8 @@ export default function Collection() {
             className={`
                 ${styles.item} ${styles.primary}
               `}
-              onClick={() => setIsOpen1(true)}
-            >
+            onClick={() => setIsOpen1(true)}
+          >
             <div className={styles.text}>
               <h4 className={styles.title}>Galaxy Watch SERIES 4</h4>
               <p>O relógio que cuida de você</p>
@@ -41,12 +43,12 @@ export default function Collection() {
             className={styles.separator}
           />
 
-          <div 
+          <div
             className={`
                 ${styles.item} ${styles.secondary}
               `}
-              onClick={() => setIsOpen2(true)}
-            >
+            onClick={() => setIsOpen2(true)}
+          >
             <div className={styles.text}>
               <h4>Galaxy Buds 2</h4>
               <h4>Buds Pro</h4>
@@ -56,7 +58,10 @@ export default function Collection() {
         </div>
 
         <div className={styles.wrapper}>
-          <div className={`${styles.item} ${styles.secondary}`}>
+          <div
+            className={`${styles.item} ${styles.secondary}`}
+            onClick={() => setIsOpen3(true)}
+          >
             <div className={styles.title}>
               <h4>Galaxy Z Fold 3</h4>
               <h4>Flip 3 5G</h4>
@@ -70,7 +75,10 @@ export default function Collection() {
             className={styles.separator}
           />
 
-          <div className={`${styles.item} ${styles.primary}`}>
+          <div
+            className={`${styles.item} ${styles.primary}`}
+            onClick={() => setIsOpen4(true)}
+          >
             <h4 className={styles.title}>Galaxy S21 | S21+ | S21 Ultra</h4>
             <img src={item4} alt="Galaxy Watch Series 4" />
           </div>

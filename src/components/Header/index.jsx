@@ -45,6 +45,7 @@ export default function Header() {
                             borderRadius="26px"
                             p="12px 20px"
                             fontWeight="400"
+                            fontSize="var(--font-size)"
                             color="#fff"
                             onClick={() => setIsOpen(true)}
                             _focus={{
