@@ -1,0 +1,12 @@
+.middleBanner {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background: url(../../assets/middle-banner-background.jpg);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

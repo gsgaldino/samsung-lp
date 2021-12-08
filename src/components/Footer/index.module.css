@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .item:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper .item:first-child img {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px 10px 10px 10px;
+  }
+
+  .wrapper .item:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+}

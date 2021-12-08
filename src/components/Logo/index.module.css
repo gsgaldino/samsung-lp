@@ -1,0 +1,14 @@
+.logo {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .item img {
+  margin-left: -6px;
+  z-index: -1;
+  position:relative;
+}
