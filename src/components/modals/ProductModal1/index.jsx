@@ -3,17 +3,23 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   Button,
 } from "@chakra-ui/react";
 
 import { useModal } from '../../../context/ProductModal1';
 
+import styles from './index.module.css';
+
+import galaxyWatch from '../../../assets/products/smartwatch1.png';
+import galaxyWatch2 from '../../../assets/products/smartwatch2.jpg';
+
 export default function ProductModal1() {
   const { isOpen, setIsOpen1 } = useModal();
 
   const onClose = () => setIsOpen1(false);
+
+  const Text = ({ children }) => <div className={styles.box}>{children}</div>;
 
   return (
     <Modal
@@ -21,35 +27,57 @@ export default function ProductModal1() {
       onClose={onClose}
     >
       <ModalOverlay />
-      <ModalContent borderRadius="26px" pb={6}>
+      <ModalContent borderRadius="26px" pb={6} className={styles.modalContent}>
         <ModalHeader
+          className={styles.header}
           textAlign="center"
           color="#000"
-        >Galaxy Watch Series 4</ModalHeader>
-        
+        >
+          <h4>Galaxy Watch 4</h4>
+          <p>O smartwatch que cuida de você</p>
+        </ModalHeader>
+
         <ModalBody pb={6}>
-          
+          <div className={styles.wrapper}>
+            <div className={styles.item}>
+              <img src={galaxyWatch} alt="Galaxy Watch 4" />
+              <Text>
+                <ul className={styles.list}>
+                  <li>Monitoramento de atividades físicas</li>
+                  <li>Acompanhamento dos indicadores de saúde e bem estar</li>
+                  <li>Notificações e conteúdos de seu Smartphone</li>
+                  <li>GPS embarcado</li>
+                  <li>Controle de playlists sem tirar o celular do bolso</li>
+                  <li>Integração com os principais aplicativos</li>
+                  <li>Monitoramento de pressão arterial; Análise da composição corporal.</li>
+                </ul>
+              </Text>
+            </div>
+            <div className={styles.item}>
+              <Text>
+                <strong>Análise da composição corporal</strong>
+                <p>O inovador sensor Samsung BioActive (BIA) mensura, analisa e fornece informações com alta precisão sobre seu corpo, indicando pistas sobre quais aspectos precisam receber mais atenção e cuidado.</p>
+              </Text>
+              <img src={galaxyWatch2} alt="Galaxy Watch 4" />
+              <Button
+                background="#000"
+                borderRadius="26px"
+                p="12px 20px"
+                fontWeight="400"
+                fontSize="var(--font-size)"
+                color="#fff"
+                _focus={{
+                  outline: "none !important"
+                }}
+                _hover={{
+                  background: "#1f1f1f",
+                  filter: "bgihtness(110%)"
+                }}
+              >Entre em contato com um vendedor</Button>
+            </div>
+          </div>
         </ModalBody>
 
-        <ModalFooter>
-          <Button
-            background="#000"
-            borderRadius="26px"
-            p="20px 20px"
-            width="200px"
-            fontWeight="400"
-            color="#fff"
-            margin="0 auto"
-            onClick={onClose}
-            _focus={{
-              outline: "none !important"
-            }}
-            _hover={{
-              background: "#1f1f1f",
-              filter: "bgihtness(110%)"
-            }}
-          >Enviar</Button>
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );

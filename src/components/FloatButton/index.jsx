@@ -53,6 +53,7 @@ export default function FloatButton() {
           <PopoverContent
             _focus={{ border: 'none', outline: 'none' }}
             boxShadow="2px 2px 10px rgba(0,0,0,.3)"
+            borderRadius="26px"
             right="10px"
           >
             <PopoverArrow />
