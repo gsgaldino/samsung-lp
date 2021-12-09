@@ -78,6 +78,7 @@
 
   .wrapper .item {
     width: 100%;
+    height: 420px;
     margin: 20px auto;
   }
 
@@ -86,9 +87,9 @@
     font-size: 26px;
   }
 
-.wrapper .item.secondary h4 {
-  font-size: 26px;
-}
+  .wrapper .item.secondary h4 {
+    font-size: 26px;
+  }
 
   .separator {
     display: none;
