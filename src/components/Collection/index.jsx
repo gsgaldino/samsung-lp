@@ -21,7 +21,7 @@ export default function Collection() {
   const { setIsOpen4 } = useModal4();
 
   return (
-    <div className={styles.collection}>
+    <div className={styles.collection} id="produtos">
       <Provider>
         <div className={styles.wrapper}>
           <div

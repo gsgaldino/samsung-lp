@@ -81,6 +81,15 @@
     margin: 20px auto;
   }
 
+  .wrapper .item .title {
+    font-family: "Poppins", "Arial", sans-serif;
+    font-size: 26px;
+  }
+
+.wrapper .item.secondary h4 {
+  font-size: 26px;
+}
+
   .separator {
     display: none;
   }

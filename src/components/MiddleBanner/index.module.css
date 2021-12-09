@@ -19,11 +19,16 @@
   font-family: "Poppins", "Arial", sans-serif;
   font-weight: 600;
   max-width: 260px;
-  margin: 40px 0px;
+  margin: 0px 0px 40px 0px;
+  line-height: 44px;
 }
 
 .wrapper .item:first-child {
   padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media screen and (max-width: 767px) {
@@ -38,5 +43,9 @@
   .wrapper .item:first-child {
     padding: 10px;
   }
+
+.wrapper .item > h2 {
+  margin: 20px 0px;
+}
 
 }

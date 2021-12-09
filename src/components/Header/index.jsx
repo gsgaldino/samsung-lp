@@ -15,15 +15,18 @@ export default function Header() {
   const menuItems = [
     {
       label: "Produtos",
-      type: "inline"
+      type: "inline",
+      href: "#produtos"
     },
     {
       label: "Ecossistema Galaxy",
-      type: "inline"
+      type: "inline",
+      href: "#ecossistema-galaxy"
     },
     {
       label: "Integração e segurança",
-      type: "inline"
+      type: "inline",
+      href: "#integracao-e-seguranca"
     },
     {
       label: "Saiba mais",
@@ -70,7 +73,7 @@ export default function Header() {
                               filter: "bgihtness(110%)"
                             }}
                           >{item.label}</Button>
-                        : <a href="/">{item.label}</a>
+                        : <a href={item.href}>{item.label}</a>
                     }
                   </li>
                 ))}

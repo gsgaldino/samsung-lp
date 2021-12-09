@@ -14,7 +14,7 @@ export default function Integrations() {
   const { setIsCustomizacaoSegurancaOpen } = useModalCustomizacaoSeguranca();
 
   return (
-    <div className={styles.integrations}>
+    <div className={styles.integrations} id="integracao-e-seguranca">
       <Provider>
         <div className={styles.wrapper}>
           <div className={styles.item}>

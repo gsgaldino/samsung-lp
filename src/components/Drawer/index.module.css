@@ -1,0 +1,13 @@
+.menu {
+  height: 100%;
+}
+
+.menu ul {
+  list-style: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu ul li {
+  margin: 32px 0px;
+}

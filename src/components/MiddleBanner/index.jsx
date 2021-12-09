@@ -11,7 +11,7 @@ export default function MiddleBanner() {
   const { setIsOpen } = useModal();
 
   return (
-    <div className={styles.middleBanner}>
+    <div className={styles.middleBanner} id="ecossistema-galaxy">
       <Provider>
         <div className={styles.wrapper}>
           <div className={styles.item}>
