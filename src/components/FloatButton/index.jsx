@@ -17,8 +17,11 @@ import styles from './index.module.css';
 import whatsappIcon from '../../assets/whatsapp.png';
 
 export default function FloatButton() {
+  const [loading, setLoading] = React.useState(false);
   const phoneRef = React.useRef();
+
   const handleSubmit = async () => {
+    setLoading(true);
     const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXjW2StmzJki-n7YHLkRcJBASXhoICjDn2lnlGgmmxA7f4Mg/formResponse";
 
     const payload = new FormData();
@@ -28,13 +31,18 @@ export default function FloatButton() {
     headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
     headers.append('Access-Control-Allow-Credentials', 'true');
 
-    const res = await fetch(url, {
+    await fetch(url, {
       mode: 'no-cors',
       method: "post",
       body: payload
+    })
+    .then(console.log)
+    .catch(console.log)
+    .finally(() => {
+      window.open('https://api.whatsapp.com/send?phone=5511986345917', '_blank');
+      return setLoading(false);
     });
 
-    console.log(res);
   };
 
   return (
@@ -71,6 +79,7 @@ export default function FloatButton() {
                   fontSize="var(--font-size)"
                   color="#fff"
                   onClick={handleSubmit}
+                  isLoading={loading}
                   _focus={{
                     outline: "none !important"
                   }}
