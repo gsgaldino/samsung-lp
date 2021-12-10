@@ -12,6 +12,7 @@ import {
   Input,
   useToast
 } from "@chakra-ui/react";
+import InputMask from 'react-input-mask';
 
 import { useModal } from '../../../context/ModalRegister';
 
@@ -29,6 +30,17 @@ export default function RegisterModal() {
 
   const handleSubmit = async () => {
     setLoading(true);
+
+    if (!nameRef.current.value || !phoneRef.current.value || !emailRef.current.value){
+      message({
+        title: "Falha ao enviar",
+        description: "Por favor, preencha todos os campos",
+        status: "info",
+        isClosable: true
+      });
+      return setLoading(false);
+    };
+
     const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeElrfdYBJtxUdzS5IG78Ea0aZwfYsSduaEroesNayIui3B8w/formResponse";
 
     const payload = new FormData();
@@ -48,10 +60,8 @@ export default function RegisterModal() {
       .then(console.log)
       .catch(console.log)
       .finally(() => {
-        message({
-          title: "Sucesso!",
-          description: "Formulário enviado com sucesso 😀"
-        });
+        window.open('https://api.whatsapp.com/send?phone=5511986345917', '_blank');
+        setIsOpen(false);
         return setLoading(false);
       });
   };
@@ -79,7 +89,9 @@ export default function RegisterModal() {
           <FormControl mt={4}>
             <FormLabel>Celular</FormLabel>
             <Input
-              ref={phoneRef} 
+              ref={phoneRef}
+              as={InputMask}
+              mask="(**)*****-****"
               border="2px solid #BDBDBD !important" 
             />
           </FormControl>

@@ -9,6 +9,12 @@ import {
 } from "@chakra-ui/react";
 
 import { useModal } from '../../../context/ProductModal2';
+import Box from '../components/Box';
+
+import styles from './index.module.css';
+
+import budsPro from '../../../assets/products/budspro.png';
+import buds2 from '../../../assets/products/buds2.png';
 
 export default function ProductModal2() {
   const { isOpen, setIsOpen2 } = useModal();
@@ -23,24 +29,44 @@ export default function ProductModal2() {
       <ModalOverlay />
       <ModalContent borderRadius="26px" pb={6}>
         <ModalHeader
+          className={styles.header}
           textAlign="center"
           color="#000"
-        >Galaxy Buds 2 Buds Pro</ModalHeader>
-        
+        >
+          <h4>Galaxy Wearable</h4>
+        </ModalHeader>
+
         <ModalBody pb={6}>
-          
+          <div className={styles.wrapper}>
+            <div className={styles.item}>
+              <img src={budsPro} alt="Buds Pro" />
+              <p>Galaxy Buds Pro</p>
+            </div>
+            <div className={styles.item}>
+              <img src={buds2} alt="Buds Pro" />
+              <p>Galaxy Buds 2</p>
+            </div>
+          </div>
+
+          <Box>
+            <ul className={styles.menu}>
+              <li>Cancelamento de ruído ativo <br/> + opção de som ambiente natural;</li>
+              <li>Som imersivo com alto-falantes duplos;</li>
+              <li>Melhor qualidade de chamadas com 3 microfones dedicados;</li>
+              <li>Design confortável com ajuste ergonômico;</li>
+            </ul>
+          </Box>
+
         </ModalBody>
 
-        <ModalFooter>
+        <ModalFooter display="flex" justifyContent="center">
           <Button
             background="#000"
             borderRadius="26px"
-            p="20px 20px"
-            width="200px"
+            p="12px 20px"
             fontWeight="400"
+            fontSize="var(--font-size)"
             color="#fff"
-            margin="0 auto"
-            onClick={onClose}
             _focus={{
               outline: "none !important"
             }}
@@ -48,7 +74,7 @@ export default function ProductModal2() {
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
             }}
-          >Enviar</Button>
+          >Entre em contato com um vendedor</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

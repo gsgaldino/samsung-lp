@@ -11,6 +11,7 @@ import {
   Input,
   Button
 } from '@chakra-ui/react';
+import InputMask from 'react-input-mask';
 
 import styles from './index.module.css';
 
@@ -36,13 +37,12 @@ export default function FloatButton() {
       method: "post",
       body: payload
     })
-    .then(console.log)
-    .catch(console.log)
-    .finally(() => {
-      window.open('https://api.whatsapp.com/send?phone=5511986345917', '_blank');
-      return setLoading(false);
-    });
-
+      .then(console.log)
+      .catch(console.log)
+      .finally(() => {
+        window.open('https://api.whatsapp.com/send?phone=5511986345917', '_blank');
+        return setLoading(false);
+      });
   };
 
   return (
@@ -58,37 +58,27 @@ export default function FloatButton() {
           >
             <PopoverArrow />
             <PopoverCloseButton />
-            <PopoverHeader>Whatsapp</PopoverHeader>
+            <PopoverHeader>Você esta quase lá...</PopoverHeader>
             <PopoverBody>
               <div className={styles.wrapper}>
                 <div className={styles.box}>
-                  <p>Digite seu número</p>
-                  <Input 
-                    placeholder="(XX) XXXXX-XXXX"
+                  <p>Para agilizar o atendimento preencha os dados abaixo</p>
+                  <Input
                     ref={phoneRef}
-                    _focus={{
-                      border: '0.5px solid #000',
-                      outline: 'none'
-                    }} 
+                    as={InputMask}
+                    mask="(**)*****-****"
+                    border="2px solid #BDBDBD !important"
                   />
                 </div>
                 <Button
-                  background="#000"
                   borderRadius="26px"
                   p="12px 20px"
                   fontWeight="400"
                   fontSize="var(--font-size)"
-                  color="#fff"
+                  colorScheme="whatsapp"
                   onClick={handleSubmit}
                   isLoading={loading}
-                  _focus={{
-                    outline: "none !important"
-                  }}
-                  _hover={{
-                    background: "#1f1f1f",
-                    filter: "bgihtness(110%)"
-                  }}
-                >Enviar</Button>
+                >Enviar WhatsApp</Button>
               </div>
             </PopoverBody>
           </PopoverContent>
