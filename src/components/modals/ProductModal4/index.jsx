@@ -10,6 +10,11 @@ import {
 
 import { useModal4 } from '../../../context/ProductModal4';
 
+import styles from './index.module.css';
+
+import galaxys21 from '../../../assets/galaxys21.png';
+import galaxys21Plus from '../../../assets/galxys21ultra.png';
+
 export default function ProductModal4() {
   const { isOpen, setIsOpen4 } = useModal4();
 
@@ -21,25 +26,36 @@ export default function ProductModal4() {
       onClose={onClose}
     >
       <ModalOverlay />
-      <ModalContent borderRadius="26px" pb={6}>
+      <ModalContent borderRadius="26px" pb={6} className={styles.modalContent}>
         <ModalHeader
+          className={styles.header}
           textAlign="center"
           color="#000"
-        >Galaxy S21 | S21+ | S21 Ultra</ModalHeader>
-        
+        >
+          <h4>Galaxy S21 5G | S21+ 5G | S21 Ultra 5G</h4>
+        </ModalHeader>
+
         <ModalBody pb={6}>
+          <div className={styles.wrapper}>
+            <div className={styles.item}>
+              <p>Galaxy S21 5G | S21+ 5G</p>
+              <img src={galaxys21} alt="Galaxy S21" />
+            </div>
+            <div className={styles.item}>
+              <p>Galaxy S21 Ultra 5G</p>
+              <img src={galaxys21Plus} alt="Galaxy S21 Plus" />
+            </div>
+          </div>
         </ModalBody>
 
-        <ModalFooter>
+        <ModalFooter display="flex" justifyContent="center">
           <Button
             background="#000"
             borderRadius="26px"
-            p="20px 20px"
-            width="200px"
+            p="12px 20px"
             fontWeight="400"
+            fontSize="var(--font-size)"
             color="#fff"
-            margin="0 auto"
-            onClick={onClose}
             _focus={{
               outline: "none !important"
             }}
@@ -47,7 +63,7 @@ export default function ProductModal4() {
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
             }}
-          >Enviar</Button>
+          >Entre em contato com um vendedor</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

@@ -12,6 +12,9 @@ import DrawerProvider from './context/Drawer';
 
 import './globals.css';
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const App = () => (
   <ChakraProvider>
     <RegisterModalContext>

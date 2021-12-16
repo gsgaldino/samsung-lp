@@ -1,0 +1,49 @@
+.header h4 {
+  font-size: 28px;
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.wrapper .item {
+  width: 48%;
+}
+
+.wrapper .item img {
+  margin-bottom: 20px;
+}
+
+.boxWrapper {
+  display: flex;
+}
+
+.boxWrapper ul {
+  list-style: none;
+}
+
+.boxWrapper .item {
+  width: 50%;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.boxWrapper .item h4 {
+  font-weight: 700;
+  margin: 10px 0px;
+}
+
+.boxWrapper .item ul li {
+  margin: 0px 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.modalContent {
+  max-width: none !important;
+  width: 900px !important;
+}

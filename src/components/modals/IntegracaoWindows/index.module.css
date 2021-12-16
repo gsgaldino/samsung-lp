@@ -1,0 +1,18 @@
+.header h4 {
+  font-size: 28px;
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.modalContent {
+  max-width: none !important;
+  width: 980px !important;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper img {
+  width: 300px ;
+}

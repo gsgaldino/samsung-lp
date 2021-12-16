@@ -1,0 +1,19 @@
+.modalContent {
+  width: 900px !important;
+  max-width: none !important;
+}
+
+.item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column;
+}
+
+.item h4 {
+  margin: 20px 0px;
+  color: #000;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+}
