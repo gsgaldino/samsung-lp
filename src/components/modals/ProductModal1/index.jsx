@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useModal } from '../../../context/ProductModal1';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
 import Box from '../components/Box';
 
 import styles from './index.module.css';
@@ -17,6 +18,7 @@ import galaxyWatch2 from '../../../assets/products/smartwatch2.jpg';
 
 export default function ProductModal1() {
   const { isOpen, setIsOpen1 } = useModal();
+  const { setIsOpen } = useRegisterModal();
 
   const onClose = () => setIsOpen1(false);
 
@@ -71,6 +73,10 @@ export default function ProductModal1() {
                 _hover={{
                   background: "#1f1f1f",
                   filter: "bgihtness(110%)"
+                }}
+                onClick={() => {
+                  setIsOpen1(false);
+                  setIsOpen(true);
                 }}
               >Entre em contato com um vendedor</Button>
             </div>

@@ -10,6 +10,7 @@ import {
 import Box from '../components/Box';
 
 import { useModal3 } from '../../../context/ProductModal3';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
 
 import styles from './index.module.css';
 
@@ -19,6 +20,7 @@ import check from '../../../assets/check.png';
 
 export default function ProductModal3() {
   const { isOpen, setIsOpen3 } = useModal3();
+  const { setIsOpen } = useRegisterModal();
 
   const onClose = () => setIsOpen3(false);
 
@@ -112,6 +114,10 @@ export default function ProductModal3() {
             _hover={{
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
+            }}
+            onClick={() => {
+              setIsOpen3(false);
+              setIsOpen(true);
             }}
           >Entre em contato com um vendedor</Button>
         </ModalFooter>

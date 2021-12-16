@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useModalIntegracaoWindows } from '../../../context/IntegracaoWindows';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
 
 import windows1 from '../../../assets/products/windows1.png';
 import windows2 from '../../../assets/products/windows2.png';
@@ -18,6 +19,7 @@ import styles from './index.module.css';
 
 export default function IntegracaoWindows() {
   const { isIntegracaoWindowsOpen, setIsIntegracaoWindowsOpen } = useModalIntegracaoWindows();
+  const { setIsOpen } = useRegisterModal();
 
   const onClose = () => setIsIntegracaoWindowsOpen(false);
 
@@ -58,6 +60,10 @@ export default function IntegracaoWindows() {
             _hover={{
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
+            }}
+            onClick={() => {
+              setIsIntegracaoWindowsOpen(false);
+              setIsOpen(true);
             }}
           >Entre em contato com um vendedor</Button>
         </ModalFooter>

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useModal4 } from '../../../context/ProductModal4';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
 
 import styles from './index.module.css';
 
@@ -17,6 +18,7 @@ import galaxys21Plus from '../../../assets/galxys21ultra.png';
 
 export default function ProductModal4() {
   const { isOpen, setIsOpen4 } = useModal4();
+  const { setIsOpen } = useRegisterModal();
 
   const onClose = () => setIsOpen4(false);
 
@@ -62,6 +64,10 @@ export default function ProductModal4() {
             _hover={{
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
+            }}
+            onClick={() => {
+              setIsOpen4(false);
+              setIsOpen(true);
             }}
           >Entre em contato com um vendedor</Button>
         </ModalFooter>

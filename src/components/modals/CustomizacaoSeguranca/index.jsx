@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -8,11 +9,16 @@ import {
 } from "@chakra-ui/react";
 
 import { useModalCustomizacaoSeguranca } from '../../../context/CustomizacaoSeguranca';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
 
 import Slider from "react-slick";
 
 import customization1 from '../../../assets/products/customization1.png';
-import customization2 from '../../../assets/products/customization2.png';
+import customization3 from '../../../assets/products/customization3.png';
+import customization4 from '../../../assets/products/customization4.png';
+import customization5 from '../../../assets/products/customization5.png';
+
+import { useMediaQuery } from 'react-responsive';
 
 import styles from './index.module.css';
 
@@ -21,6 +27,11 @@ export default function CustomizacaoSeguranca() {
     isCustomizacaoSegurancaOpen,
     setIsCustomizacaoSegurancaOpen
   } = useModalCustomizacaoSeguranca();
+  const { setIsOpen } = useRegisterModal();
+  const [activeSlide, setActiveSlide] = React.useState(0);
+  const isMobile = useMediaQuery({
+    query: '(max-width: 767px)'
+  })
 
   const onClose = () => setIsCustomizacaoSegurancaOpen(false);
 
@@ -29,7 +40,8 @@ export default function CustomizacaoSeguranca() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    afterChange: current => setActiveSlide(current)
   };
 
   return (
@@ -49,7 +61,20 @@ export default function CustomizacaoSeguranca() {
 
             <div className={styles.item}>
               <h4>Praticidade e segurança</h4>
-              <img src={customization2} alt="Customização e segurança" />
+              <div className={styles.wrapper} style={{
+                height: (activeSlide === 1 && isMobile) ? "1400px" : "300px",
+                transition: "all 0.4s ease"
+              }}>
+                <div className={styles.item}>
+                  <img src={customization3} alt="Customização e segurança" />
+                </div>
+                <div className={styles.item}>
+                  <img src={customization4} alt="Customização e segurança" />
+                </div>
+                <div className={styles.item}>
+                  <img src={customization5} alt="Customização e segurança" />
+                </div>
+              </div>
             </div>
           </Slider>
         </ModalBody>
@@ -68,6 +93,10 @@ export default function CustomizacaoSeguranca() {
             _hover={{
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
+            }}
+            onClick={() => {
+              setIsCustomizacaoSegurancaOpen(false);
+              setIsOpen(true);
             }}
           >Entre em contato com um vendedor</Button>
         </ModalFooter>

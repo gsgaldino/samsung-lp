@@ -18,8 +18,26 @@
   font-weight: 600;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.wrapper .item img {
+  position: relative;
+  max-width: 100%;
+}
+
+.wrapper {
+  margin-top: 60px;
+}
+
 @media screen and (max-width: 767px) {
   .modalContent {
     width: 90% !important;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    margin-top: 0px;
   }
 }

@@ -9,6 +9,8 @@ import {
 } from "@chakra-ui/react";
 
 import { useModal } from '../../../context/ProductModal2';
+import { useModal as useRegisterModal } from '../../../context/ModalRegister';
+
 import Box from '../components/Box';
 
 import styles from './index.module.css';
@@ -18,6 +20,7 @@ import buds2 from '../../../assets/products/buds2.png';
 
 export default function ProductModal2() {
   const { isOpen, setIsOpen2 } = useModal();
+  const { setIsOpen } = useRegisterModal();
 
   const onClose = () => setIsOpen2(false);
 
@@ -75,6 +78,10 @@ export default function ProductModal2() {
             _hover={{
               background: "#1f1f1f",
               filter: "bgihtness(110%)"
+            }}
+            onClick={() => {
+              setIsOpen2(false);
+              setIsOpen(true);
             }}
           >Entre em contato com um vendedor</Button>
         </ModalFooter>
