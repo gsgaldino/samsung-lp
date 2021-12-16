@@ -19,3 +19,22 @@
 .wrapper .item {
   text-align: center;
 }
+
+@media screen and (max-width: 767px) {
+  .header h4 {
+    font-size: 18px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper .item {
+    margin: 10px 0px;
+  }
+
+  .modalContent {
+    width: 90% !important;
+  }
+
+}

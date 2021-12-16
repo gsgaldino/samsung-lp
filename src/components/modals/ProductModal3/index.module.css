@@ -47,3 +47,19 @@
   max-width: none !important;
   width: 900px !important;
 }
+
+@media screen and (max-width: 767px){
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper .item {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .modalContent {
+    width: 90% !important;
+  }
+
+}

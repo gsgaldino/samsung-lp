@@ -17,3 +17,9 @@
   font-size: 26px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 767px) {
+  .modalContent {
+    width: 90% !important;
+  }
+}

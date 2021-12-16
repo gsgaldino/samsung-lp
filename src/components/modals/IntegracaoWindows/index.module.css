@@ -16,3 +16,22 @@
 .wrapper img {
   width: 300px ;
 }
+
+@media screen and (max-width: 767px) {
+  .header h4 {
+    font-size: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper img {
+    width: 100%;
+  }
+
+  .modalContent {
+    width: 90% !important;
+  }
+
+}

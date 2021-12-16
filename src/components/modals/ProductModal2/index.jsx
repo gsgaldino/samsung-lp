@@ -27,7 +27,7 @@ export default function ProductModal2() {
       onClose={onClose}
     >
       <ModalOverlay />
-      <ModalContent borderRadius="26px" pb={6}>
+      <ModalContent borderRadius="26px" pb={6} className={styles.modalContent}>
         <ModalHeader
           className={styles.header}
           textAlign="center"
@@ -48,14 +48,16 @@ export default function ProductModal2() {
             </div>
           </div>
 
-          <Box>
-            <ul className={styles.menu}>
-              <li>Cancelamento de ruído ativo <br/> + opção de som ambiente natural;</li>
-              <li>Som imersivo com alto-falantes duplos;</li>
-              <li>Melhor qualidade de chamadas com 3 microfones dedicados;</li>
-              <li>Design confortável com ajuste ergonômico;</li>
-            </ul>
-          </Box>
+          <div className={styles.text}>
+            <Box>
+              <ul className={styles.menu}>
+                <li>Cancelamento de ruído ativo <br /> + opção de som ambiente natural;</li>
+                <li>Som imersivo com alto-falantes duplos;</li>
+                <li>Melhor qualidade de chamadas com 3 microfones dedicados;</li>
+                <li>Design confortável com ajuste ergonômico;</li>
+              </ul>
+            </Box>
+          </div>
 
         </ModalBody>
 

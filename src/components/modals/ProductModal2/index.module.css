@@ -28,3 +28,17 @@
   font-size: 14px;
   margin: 10px 0px;
 }
+
+@media screen and (max-width: 767px) {
+  .modalContent {
+    width: 90%;
+  }
+
+  .wrapper .item {
+    font-size: 20px;
+  }
+
+  .text {
+    margin-top: 20px;
+  }
+}

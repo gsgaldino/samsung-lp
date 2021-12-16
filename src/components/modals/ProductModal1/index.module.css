@@ -65,3 +65,28 @@
   max-width: none !important;
   width: 900px !important;
 }
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper .item {
+    padding: 10px;
+    margin: 14px 0px;
+  }
+
+  .wrapper .item:first-child {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .wrapper .item:last-child {
+    width: 106%;
+  }
+
+  .modalContent {
+    max-width: none !important;
+    width: 90% !important;
+  }
+}
