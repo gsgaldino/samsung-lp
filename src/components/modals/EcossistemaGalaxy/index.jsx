@@ -33,7 +33,7 @@ export default function EcossistemaGalaxy() {
     setIsEcossistemaGalaxyOpen
   } = useModalEcossistemaGalaxy();
   const { setIsOpen } = useRegisterModal();
-  const [activeSlide, setActiveSlide] = React.useState(0);
+  const [activeSlide, setActiveSlide] = React.useState(1);
   const isMobile = useMediaQuery({
     query: '(max-width: 767px)'
   })
@@ -49,7 +49,7 @@ export default function EcossistemaGalaxy() {
       if (isMobile && activeSlide === 1) {
         return position = { bottom: "-580%", left: "60%" };
       } else if (isMobile && activeSlide === 0) {
-        return position = { bottom: "-1134%", left: "60%" }
+        return position = { bottom: "-1080%", left: "60%" }
       } else if (!isMobile) {
         return position = { bottom: "-300px", left: "280px" }
       };
@@ -86,7 +86,7 @@ export default function EcossistemaGalaxy() {
       let position;
 
       if (isMobile && activeSlide === 0) {
-        return position = { bottom: "-1134%", left: "-60%" };
+        return position = { bottom: "-1080%", left: "-60%" };
       } else if (isMobile && activeSlide === 1) {
         return position = { bottom: "-580%", left: "-60%" }
       } else if (!isMobile) {
@@ -116,6 +116,13 @@ export default function EcossistemaGalaxy() {
         />
       </div>
     );
+  };
+
+  const getHeight = () => {
+    if (isMobile)
+      return activeSlide === 1 ? "1100px" : "1900px";
+
+    return "320px";
   };
 
   const settings = {
@@ -149,10 +156,13 @@ export default function EcossistemaGalaxy() {
           <Slider {...settings} appendDots={appendDots}>
             <div className={styles.item}>
               <h4>Ecossistema Galaxy</h4>
-              <div className={styles.wrapper} style={{
-                height: (activeSlide === 1 && isMobile) ? "1100px" : "2000px",
-                transition: "all 0.4s ease"
-              }}>
+              <div
+                className={styles.wrapper}
+                style={{
+                  height: getHeight(),
+                  transition: "all 0.4s ease"
+                }}
+              >
                 <div className={styles.item}>
                   <img src={ecoGalaxy1} alt="Customização e segurança" />
                 </div>
@@ -168,7 +178,7 @@ export default function EcossistemaGalaxy() {
                 mt={6}
                 background="#000"
                 borderRadius="26px"
-                top={isMobile ? "-200px" : "100px"}
+                top={isMobile ? "-290px" : "100px"}
                 p="12px 20px"
                 fontWeight="400"
                 fontSize="var(--font-size)"
@@ -195,9 +205,9 @@ export default function EcossistemaGalaxy() {
               }} />}
 
               {isMobile && <div className={styles.mobileWrapper}>
-                <img src={mgalaxyTab1} alt="Customização e segurança"/>
-                <img src={mgalaxyTab2} alt="Customização e segurança"/>
-                <img src={mgalaxyTab3} alt="Customização e segurança"/>
+                <img src={mgalaxyTab1} alt="Customização e segurança" />
+                <img src={mgalaxyTab2} alt="Customização e segurança" />
+                <img src={mgalaxyTab3} alt="Customização e segurança" />
               </div>}
 
               <Button
