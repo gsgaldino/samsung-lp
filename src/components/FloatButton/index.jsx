@@ -40,7 +40,7 @@ export default function FloatButton() {
       .then(console.log)
       .catch(console.log)
       .finally(() => {
-        window.open('https://api.whatsapp.com/send?phone=5511986345917', '_blank');
+        window.open('https://api.whatsapp.com/send?phone=5511992889851', '_blank');
         return setLoading(false);
       });
   };

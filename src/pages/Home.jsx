@@ -15,6 +15,7 @@ import ProductModal3 from '../components/modals/ProductModal3';
 import ProductModal4 from '../components/modals/ProductModal4';
 import IntegracaoWindows from '../components/modals/IntegracaoWindows';
 import CustomizacaoSeguranca from '../components/modals/CustomizacaoSeguranca';
+import EcossistemaGalaxy from '../components/modals/EcossistemaGalaxy';
 import Drawer from '../components/Drawer';
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
       <ProductModal4 />
       <IntegracaoWindows />
       <CustomizacaoSeguranca />
+      <EcossistemaGalaxy />
 
       <Drawer />
 

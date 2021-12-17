@@ -20,6 +20,7 @@ import customization5 from '../../../assets/products/customization5.png';
 
 import { useMediaQuery } from 'react-responsive';
 
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import styles from './index.module.css';
 
 export default function CustomizacaoSeguranca() {
@@ -35,13 +36,93 @@ export default function CustomizacaoSeguranca() {
 
   const onClose = () => setIsCustomizacaoSegurancaOpen(false);
 
+  function PrevArrow(props) {
+    const { className, onClick } = props;
+
+    const getPosition = () => {
+      let position;
+
+      if (isMobile && activeSlide === 1){
+        return position = {bottom: "-946%", left: "60%"};
+      }else if (isMobile && activeSlide === 0) {
+        return position = {bottom: "-260%", left: "60%"}
+      }else if (!isMobile) {
+        return position = {bottom: "-276px", left: "280px"}
+      };
+
+      return position;
+    };
+
+    return (
+      <div
+        className={className}
+        style={{ 
+          display: "block",
+          width: "80px",
+          height: "80px"
+        }}
+        onClick={onClick}
+      >
+        <ChevronLeftIcon
+          w="60px"
+          h="60px" 
+          position="absolute"
+          color="#C4C4C4"
+          zIndex="999"
+          {...getPosition()}
+        />
+      </div>
+    );
+  };
+
+  function NextArrow(props) {
+    const { className, onClick } = props;
+
+    const getPosition = () => {
+      let position;
+
+      if (isMobile && activeSlide === 1){
+        return position = {bottom: "-946%", left: "-60%"};
+      }else if (isMobile && activeSlide === 0) {
+        return position = {bottom: "-260%", left: "-60%"}
+      }else if (!isMobile) {
+        return position = {bottom: "-276px", left: "-280px"}
+      };
+
+      return position;
+    };
+
+    return (
+      <div
+        className={className}
+        style={{ 
+          display: "block",
+          width: "80px",
+          height: "80px",
+        }}
+        onClick={onClick}
+      >
+        <ChevronRightIcon 
+          w="60px"
+          h="60px" 
+          position="absolute"
+          color="#C4C4C4"
+          zIndex="999"
+          {...getPosition()}
+        />
+      </div>
+    );
+  };
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: current => setActiveSlide(current)
+    afterChange: current => setActiveSlide(current),
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
   };
 
   return (
@@ -81,6 +162,7 @@ export default function CustomizacaoSeguranca() {
 
         <ModalFooter justifyContent="center">
           <Button
+            mt={6}
             background="#000"
             borderRadius="26px"
             p="12px 20px"

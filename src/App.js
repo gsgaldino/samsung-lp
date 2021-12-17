@@ -9,6 +9,7 @@ import ProductModal4 from './context/ProductModal4';
 import IntegracaoWindowsContext from './context/IntegracaoWindows';
 import CustomizacaoSeguranca from './context/CustomizacaoSeguranca';
 import DrawerProvider from './context/Drawer';
+import EcossistemaGalaxy from './context/EcossistemaGalaxy';
 
 import './globals.css';
 
@@ -25,9 +26,11 @@ const App = () => (
               <IntegracaoWindowsContext>
                 <CustomizacaoSeguranca>
                   <DrawerProvider>
+                    <EcossistemaGalaxy>
+                      
+                      <Home />
 
-                    <Home />
-
+                    </EcossistemaGalaxy>
                   </DrawerProvider>
                 </CustomizacaoSeguranca>
               </IntegracaoWindowsContext>

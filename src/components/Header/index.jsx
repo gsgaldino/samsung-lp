@@ -35,7 +35,7 @@ export default function Header() {
   ];
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Provider>
         <div className={styles.wrapper}>
           <div className={styles.item}>
@@ -43,11 +43,11 @@ export default function Header() {
           </div>
 
           <div className={styles.hamburger}>
-           <HamburgerIcon 
+            <HamburgerIcon
               onClick={() => setIsDrawerOpen(true)}
               w="50px"
               h="50px"
-           />
+            />
           </div>
 
           <div className={styles.item}>
@@ -57,22 +57,22 @@ export default function Header() {
                   <li key={String(_i)}>
                     {
                       item.type === "primary"
-                        ? <Button 
-                            background="#000"
-                            borderRadius="26px"
-                            p="12px 20px"
-                            fontWeight="400"
-                            fontSize="var(--font-size)"
-                            color="#fff"
-                            onClick={() => setIsOpen(true)}
-                            _focus={{
-                              outline: "none !important"
-                            }}
-                            _hover={{
-                              background: "#1f1f1f",
-                              filter: "bgihtness(110%)"
-                            }}
-                          >{item.label}</Button>
+                        ? <Button
+                          background="#000"
+                          borderRadius="26px"
+                          p="12px 20px"
+                          fontWeight="400"
+                          fontSize="var(--font-size)"
+                          color="#fff"
+                          onClick={() => setIsOpen(true)}
+                          _focus={{
+                            outline: "none !important"
+                          }}
+                          _hover={{
+                            background: "#1f1f1f",
+                            filter: "bgihtness(110%)"
+                          }}
+                        >{item.label}</Button>
                         : <a href={item.href}>{item.label}</a>
                     }
                   </li>
@@ -82,6 +82,6 @@ export default function Header() {
           </div>
         </div>
       </Provider>
-    </div>
+    </header>
   );
 };

@@ -26,3 +26,14 @@ img {
   position: relative;
   max-width: 100%;
 }
+
+.slick-arrow:before {
+  display: none !important;
+}
+
+.slick-dots {
+  max-width: 120px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 10;
+}
