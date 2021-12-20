@@ -52,10 +52,11 @@ export default function RegisterModal() {
     const pageUrl = new URL(window.location.href);
     const params = new URLSearchParams(pageUrl.search);
 
-    payload.append("entry.64682934", params.get('ip'));
-    payload.append("entry.102628012", params.get('origem'));
+    payload.append("entry.64682934", params.get('origem'));
+    payload.append("entry.102628012", params.get('sistema'));
     payload.append("entry.1123328919", params.get('uf'));
     payload.append("entry.800382816", params.get('cidade'));
+    payload.append("entry.783774831", params.get('ip'));
 
     const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');

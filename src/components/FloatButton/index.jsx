@@ -26,7 +26,17 @@ export default function FloatButton() {
     const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXjW2StmzJki-n7YHLkRcJBASXhoICjDn2lnlGgmmxA7f4Mg/formResponse";
 
     const payload = new FormData();
-    payload.append("entry.1664633063", phoneRef.current.value);
+    payload.append("entry.1664633063", phoneRef.current.value);    
+
+    // not writable values
+    const pageUrl = new URL(window.location.href);
+    const params = new URLSearchParams(pageUrl.search);
+
+    payload.append("entry.1130805858", params.get('ip'));
+    payload.append("entry.1009939788", params.get('origem'));
+    payload.append("entry.824017109", params.get('uf'));
+    payload.append("entry.732145377", params.get('cidade'));
+    payload.append("entry.843436838", params.get('sistema'));
 
     const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
