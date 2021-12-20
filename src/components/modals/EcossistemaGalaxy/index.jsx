@@ -155,42 +155,6 @@ export default function EcossistemaGalaxy() {
         <ModalBody pb={6}>
           <Slider {...settings} appendDots={appendDots}>
             <div className={styles.item}>
-              <h4>Galaxy TAB | S7 FE</h4>
-              {!isMobile && <img src={galaxyTab} alt="Customização e segurança" style={{
-                maxWidth: "780px"
-              }} />}
-
-              {isMobile && <div className={styles.mobileWrapper}>
-                <img src={mgalaxyTab1} alt="Customização e segurança" />
-                <img src={mgalaxyTab2} alt="Customização e segurança" />
-                <img src={mgalaxyTab3} alt="Customização e segurança" />
-              </div>}
-
-              <Button
-                mt={isMobile ? 0 : 6}
-                background="#000"
-                borderRadius="26px"
-                top={isMobile ? "0px" : "-100px"}
-                left={isMobile ? "0px" : "-40px"}
-                p="12px 20px"
-                fontWeight="400"
-                fontSize="var(--font-size)"
-                color="#fff"
-                _focus={{
-                  outline: "none !important"
-                }}
-                _hover={{
-                  background: "#1f1f1f",
-                  filter: "bgihtness(110%)"
-                }}
-                onClick={() => {
-                  setIsEcossistemaGalaxyOpen(false);
-                  setIsOpen(true);
-                }}
-              >Entre em contato com um vendedor</Button>
-            </div>
-
-            <div className={styles.item}>
               <h4>Ecossistema Galaxy</h4>
               <div
                 className={styles.wrapper}
@@ -220,6 +184,42 @@ export default function EcossistemaGalaxy() {
                 fontSize="var(--font-size)"
                 color="#fff"
                 mb={isMobile ? "-200px" : "-200px"}
+                _focus={{
+                  outline: "none !important"
+                }}
+                _hover={{
+                  background: "#1f1f1f",
+                  filter: "bgihtness(110%)"
+                }}
+                onClick={() => {
+                  setIsEcossistemaGalaxyOpen(false);
+                  setIsOpen(true);
+                }}
+              >Entre em contato com um vendedor</Button>
+            </div>
+
+            <div className={styles.item}>
+              <h4>Galaxy TAB | S7 FE</h4>
+              {!isMobile && <img src={galaxyTab} alt="Customização e segurança" style={{
+                maxWidth: "780px"
+              }} />}
+
+              {isMobile && <div className={styles.mobileWrapper}>
+                <img src={mgalaxyTab1} alt="Customização e segurança" />
+                <img src={mgalaxyTab2} alt="Customização e segurança" />
+                <img src={mgalaxyTab3} alt="Customização e segurança" />
+              </div>}
+
+              <Button
+                mt={isMobile ? 0 : 6}
+                background="#000"
+                borderRadius="26px"
+                top={isMobile ? "0px" : "-100px"}
+                left={isMobile ? "0px" : "-40px"}
+                p="12px 20px"
+                fontWeight="400"
+                fontSize="var(--font-size)"
+                color="#fff"
                 _focus={{
                   outline: "none !important"
                 }}

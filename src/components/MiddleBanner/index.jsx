@@ -1,14 +1,14 @@
 import Provider from '../Provider';
 import { Button } from '@chakra-ui/react';
 
-import { useModalEcossistemaGalaxy } from '../../context/EcossistemaGalaxy';
+import { useModal } from '../../context/ModalRegister';
 
 import styles from './index.module.css';
 
 import ecossistemaGalaxy from '../../assets/ecossistema-galaxy.png';
 
 export default function MiddleBanner() {
-  const { setIsEcossistemaGalaxyOpen } = useModalEcossistemaGalaxy();
+  const { setIsOpen } = useModal();
 
   return (
     <div className={styles.middleBanner} id="ecossistema-galaxy">
@@ -22,7 +22,7 @@ export default function MiddleBanner() {
               p="12px 20px"
               fontWeight="400"
               color="#fff"
-              onClick={() => setIsEcossistemaGalaxyOpen(true)}
+              onClick={() => setIsOpen(true)}
               _focus={{
                 outline: "none !important"
               }}
