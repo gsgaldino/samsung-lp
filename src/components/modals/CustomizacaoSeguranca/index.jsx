@@ -43,9 +43,9 @@ export default function CustomizacaoSeguranca() {
       let position;
 
       if (isMobile && activeSlide === 1){
-        return position = {bottom: "-946%", left: "60%"};
+        return position = {bottom: "-966%", left: "60%"};
       }else if (isMobile && activeSlide === 0) {
-        return position = {bottom: "-260%", left: "60%"}
+        return position = {bottom: "-278%", left: "60%"}
       }else if (!isMobile) {
         return position = {bottom: "-276px", left: "280px"}
       };
@@ -82,9 +82,9 @@ export default function CustomizacaoSeguranca() {
       let position;
 
       if (isMobile && activeSlide === 1){
-        return position = {bottom: "-946%", left: "-60%"};
+        return position = {bottom: "-966%", left: "-60%"};
       }else if (isMobile && activeSlide === 0) {
-        return position = {bottom: "-260%", left: "-60%"}
+        return position = {bottom: "-278%", left: "-60%"}
       }else if (!isMobile) {
         return position = {bottom: "-276px", left: "-280px"}
       };

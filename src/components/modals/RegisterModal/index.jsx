@@ -48,6 +48,15 @@ export default function RegisterModal() {
     payload.append("entry.1763012668", phoneRef.current.value);
     payload.append("entry.1549734300", emailRef.current.value);
 
+    // not writable values
+    const pageUrl = new URL(window.location.href);
+    const params = new URLSearchParams(pageUrl.search);
+
+    payload.append("entry.64682934", params.get('ip'));
+    payload.append("entry.102628012", params.get('origem'));
+    payload.append("entry.1123328919", params.get('uf'));
+    payload.append("entry.800382816", params.get('cidade'));
+
     const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
     headers.append('Access-Control-Allow-Credentials', 'true');

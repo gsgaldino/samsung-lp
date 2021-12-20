@@ -46,9 +46,9 @@ export default function EcossistemaGalaxy() {
     const getPosition = () => {
       let position;
 
-      if (isMobile && activeSlide === 1) {
+      if (isMobile && activeSlide === 0) {
         return position = { bottom: "-580%", left: "60%" };
-      } else if (isMobile && activeSlide === 0) {
+      } else if (isMobile && activeSlide === 1) {
         return position = { bottom: "-1080%", left: "60%" }
       } else if (!isMobile) {
         return position = { bottom: "-300px", left: "280px" }
@@ -85,9 +85,9 @@ export default function EcossistemaGalaxy() {
     const getPosition = () => {
       let position;
 
-      if (isMobile && activeSlide === 0) {
+      if (isMobile && activeSlide === 1) {
         return position = { bottom: "-1080%", left: "-60%" };
-      } else if (isMobile && activeSlide === 1) {
+      } else if (isMobile && activeSlide === 0) {
         return position = { bottom: "-580%", left: "-60%" }
       } else if (!isMobile) {
         return position = { bottom: "-300px", left: "-280px" }
@@ -120,7 +120,7 @@ export default function EcossistemaGalaxy() {
 
   const getHeight = () => {
     if (isMobile)
-      return activeSlide === 1 ? "1100px" : "1900px";
+      return activeSlide === 0 ? "1100px" : "1900px";
 
     return "320px";
   };
@@ -155,6 +155,42 @@ export default function EcossistemaGalaxy() {
         <ModalBody pb={6}>
           <Slider {...settings} appendDots={appendDots}>
             <div className={styles.item}>
+              <h4>Galaxy TAB | S7 FE</h4>
+              {!isMobile && <img src={galaxyTab} alt="Customização e segurança" style={{
+                maxWidth: "780px"
+              }} />}
+
+              {isMobile && <div className={styles.mobileWrapper}>
+                <img src={mgalaxyTab1} alt="Customização e segurança" />
+                <img src={mgalaxyTab2} alt="Customização e segurança" />
+                <img src={mgalaxyTab3} alt="Customização e segurança" />
+              </div>}
+
+              <Button
+                mt={isMobile ? 0 : 6}
+                background="#000"
+                borderRadius="26px"
+                top={isMobile ? "0px" : "-100px"}
+                left={isMobile ? "0px" : "-40px"}
+                p="12px 20px"
+                fontWeight="400"
+                fontSize="var(--font-size)"
+                color="#fff"
+                _focus={{
+                  outline: "none !important"
+                }}
+                _hover={{
+                  background: "#1f1f1f",
+                  filter: "bgihtness(110%)"
+                }}
+                onClick={() => {
+                  setIsEcossistemaGalaxyOpen(false);
+                  setIsOpen(true);
+                }}
+              >Entre em contato com um vendedor</Button>
+            </div>
+
+            <div className={styles.item}>
               <h4>Ecossistema Galaxy</h4>
               <div
                 className={styles.wrapper}
@@ -175,7 +211,7 @@ export default function EcossistemaGalaxy() {
               </div>
 
               <Button
-                mt={6}
+                mt={isMobile ? 0 : 6}
                 background="#000"
                 borderRadius="26px"
                 top={isMobile ? "-290px" : "100px"}
@@ -184,42 +220,6 @@ export default function EcossistemaGalaxy() {
                 fontSize="var(--font-size)"
                 color="#fff"
                 mb={isMobile ? "-200px" : "-200px"}
-                _focus={{
-                  outline: "none !important"
-                }}
-                _hover={{
-                  background: "#1f1f1f",
-                  filter: "bgihtness(110%)"
-                }}
-                onClick={() => {
-                  setIsEcossistemaGalaxyOpen(false);
-                  setIsOpen(true);
-                }}
-              >Entre em contato com um vendedor</Button>
-            </div>
-
-            <div className={styles.item}>
-              <h4>Galaxy TAB | S7 FE</h4>
-              {!isMobile && <img src={galaxyTab} alt="Customização e segurança" style={{
-                maxWidth: "780px"
-              }} />}
-
-              {isMobile && <div className={styles.mobileWrapper}>
-                <img src={mgalaxyTab1} alt="Customização e segurança" />
-                <img src={mgalaxyTab2} alt="Customização e segurança" />
-                <img src={mgalaxyTab3} alt="Customização e segurança" />
-              </div>}
-
-              <Button
-                mt={6}
-                background="#000"
-                borderRadius="26px"
-                top={isMobile ? "0px" : "-100px"}
-                left={isMobile ? "0px" : "-40px"}
-                p="12px 20px"
-                fontWeight="400"
-                fontSize="var(--font-size)"
-                color="#fff"
                 _focus={{
                   outline: "none !important"
                 }}
